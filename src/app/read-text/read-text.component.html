@@ -1,0 +1,31 @@
+<mat-card class="example-card">
+    <mat-card-header>
+        <mat-card-title>Upload File!</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+        <input type='file'  (change)="uploadFile($event)" accept=".txt" class="custom-file-input form-control" id="customFile">
+    </mat-card-content>
+    <mat-card-actions>
+        <button for="customFile" (click)="readTextFile()" mat-raised-button color="primary">Upload</button>
+    </mat-card-actions>
+</mat-card>
+<mat-card class="example-card">
+    <div class="table-responsive">
+        <table datatable class="table table-striped bg-white table-responsive">
+          <thead class="bg-voilet">
+            <tr>
+              <th>Sr.No</th>
+              <th>Words</th>
+              <th>Word's Count</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let data of wordArray;let i=index;">
+              <td>{{i+1}}</td>
+              <td style="text-align: center;">{{data.word}}</td>
+              <td>{{data.count}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+</mat-card>
